@@ -39,7 +39,7 @@ const LoginForm = ({setIsLoggedIn}) => {
                     
                     
                 </div>
-                <Link className='flex justify-end mt-2'><p className='text-sm text-[#2fdae0] opacity-80'>Forgot Password?</p></Link>
+                <Link><p className='text-xs my-2 text-[#2fdae0] text-right opacity-80'>Forgot Password?</p></Link>
            </div>
             <button className='bg-yellow-300 text-black w-full my-2 rounded-lg py-2 font-semibold '>Login</button>
         </form>

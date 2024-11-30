@@ -4,9 +4,11 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
-import Dashoard from './pages/Dashoard'
+import Dasboard from './pages/Dasboard'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import PrivateRoute from './components/PrivateRoute'
+import NotFound from './components/NotFound'
 
 
 const App = () => {
@@ -18,9 +20,13 @@ const App = () => {
       <Route path="/" element={<Home/>}/>
       <Route path="/login" element={<Login  setIsLoggedIn={setIsLoggedIn}/>}/>
       <Route path="/signup" element={<Signup setIsLoggedIn={setIsLoggedIn}/>}/>
-      <Route path="/dashboard" element={<Dashoard/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/contact" element={<Contact/>}/>
+      <Route path="/dashboard" element={<PrivateRoute isLoggedIn={isLoggedIn} >
+        <Dasboard/>
+      </PrivateRoute>}/>
+
+      <Route path="*" element={<NotFound/>} />
 
 
 
