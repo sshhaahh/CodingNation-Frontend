@@ -13,13 +13,14 @@ import NotFound from './components/NotFound'
 
 const App = () => {
   const[isLoggedIn,setIsLoggedIn]=useState(false);
+  const[accountType,setAccountType]=useState("");
   return (
     <div className=' bg-gray-900 text-white w-[100vw] h-[100vh] overflow-hidden'>
     <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/login" element={<Login  setIsLoggedIn={setIsLoggedIn}/>}/>
-      <Route path="/signup" element={<Signup setIsLoggedIn={setIsLoggedIn}/>}/>
+      <Route path="/signup" element={<Signup accountType={accountType} setAccountType={setAccountType} setIsLoggedIn={setIsLoggedIn}/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/contact" element={<Contact/>}/>
       <Route path="/dashboard" element={<PrivateRoute isLoggedIn={isLoggedIn} >

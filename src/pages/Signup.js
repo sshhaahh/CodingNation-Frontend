@@ -2,7 +2,7 @@ import React from 'react'
 import Template from '../components/Template';
 import image from '../assets/signup.png'
 
-const Signup = ({setIsLoggedIn}) => {
+const Signup = ({setIsLoggedIn,setAccountType,accountType}) => {
   return (
     <div>
       <Template
@@ -12,6 +12,8 @@ const Signup = ({setIsLoggedIn}) => {
         formType="signup"
         image={image}
         setIsLoggedIn={setIsLoggedIn}
+        setAccountType={setAccountType}
+        accountType={accountType}
       />
     </div>
   )

@@ -2,7 +2,7 @@ import frameImage from '../assets/frame.png'
 import LoginForm from './LoginForm'
 import SignupForm from './SignupForm'
 
-const Template = ({title,desc1,desc2,image,formType,setIsLoggedIn}) => {
+const Template = ({title,desc1,desc2,image,formType,setAccountType,setIsLoggedIn,accountType}) => {
   return (
     <div className='flex flex-row justify-center place-items-stretch gap-20 mt-4 px-6 '>
         <div className='flex justify-center flex-col w-[30%]'>
@@ -10,7 +10,7 @@ const Template = ({title,desc1,desc2,image,formType,setIsLoggedIn}) => {
             <p className='text-md mt-3 text-white opacity-75'>{desc1}</p>
             <p className='text-[#2fdae0] mb-4 text-md opacity-80 '>{desc2}</p>
             <div className=' w-full'>
-            {formType==="login"?(<LoginForm setIsLoggedIn={setIsLoggedIn}/>):(<SignupForm setIsLoggedIn={setIsLoggedIn}/>)}
+            {formType==="login"?(<LoginForm setIsLoggedIn={setIsLoggedIn}/>):(<SignupForm accountType={accountType} setAccountType={setAccountType} setIsLoggedIn={setIsLoggedIn}/>)}
             </div>
             <div className='flex my-3 flex-row justify-center items-center'>
               

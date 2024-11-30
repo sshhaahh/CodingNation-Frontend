@@ -4,7 +4,7 @@ import { BiSolidHide ,BiSolidShow  } from "react-icons/bi";
 import { useNavigate } from 'react-router-dom';
 
 
-const SignupForm = ({setIsLoggedIn}) => {
+const SignupForm = ({setIsLoggedIn,setAccountType,accountType}) => {
   let navigate = useNavigate();
   const[showPassword,setShowPassword]=useState(false);
   const[formData,setFormData]=useState({firstName:"",lastName:"",email:"",password:"",confirmPassword:""})
@@ -18,21 +18,28 @@ const SignupForm = ({setIsLoggedIn}) => {
   function submitHandler(e){
     e.preventDefault();
     if(formData.password!==formData.confirmPassword){
+      
       toast.error("Password do not match");
       return ;
+    }else if(accountType==""){
+      toast.error("Select Account Type");
+      return;
     }
     navigate("/",{state:formData});
     toast.success("SignUp Successfull")
     setIsLoggedIn(true);
+    console.log(formData)
   }
   return (
     <div className=''>
       <div className='flex justify-center items-center bg-gray-700 rounded-2xl w-fit h-fit mb-4'>
         <button
           className='text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-2xl text-sm px-3 py-2  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700'
+          onClick={()=>setAccountType("Student")}
         >Student</button>
         <button
           className='text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-2xl text-sm px-3 py-2  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700'
+          onClick={()=>setAccountType("Instructor")}
         >Instructor</button>
       </div >
       <form onSubmit={submitHandler}>
