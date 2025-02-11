@@ -1,5 +1,4 @@
 import toast from 'react-hot-toast';
-import logo from '../assets/Logo.svg'
 import './Navbar.css'
 import { Link, NavLink } from 'react-router-dom'
 
@@ -9,7 +8,7 @@ const Navbar = (props) => {
   return (
     <div className='flex justify-evenly items-center bg-gray-900 text-white py-3 border-b-2 border-gray-600'>
         <div>
-            <Link to="/"><img src={logo} alt="Logo" height={32} width={160} loading="lazy" /></Link>
+            <Link to="/"><h1 className='text-3xl font-bold shadow-2xl'>Coding Nation</h1></Link>
         </div>
         <nav>
             <ul className='flex gap-3 font-semibold text-md'>

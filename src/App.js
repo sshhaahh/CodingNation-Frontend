@@ -15,7 +15,7 @@ const App = () => {
   const[isLoggedIn,setIsLoggedIn]=useState(false);
   const[accountType,setAccountType]=useState("");
   return (
-    <div className=' bg-gray-900 text-white w-[100vw] h-[100vh] overflow-hidden'>
+    <div className='  text-white w-[100vw] h-[100vh] overflow-hidden   '>
     <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
     <Routes>
       <Route path="/" element={<Home/>}/>

@@ -21,7 +21,7 @@ const SignupForm = ({setIsLoggedIn,setAccountType,accountType}) => {
       
       toast.error("Password do not match");
       return ;
-    }else if(accountType==""){
+    }else if(accountType===""){
       toast.error("Select Account Type");
       return;
     }
