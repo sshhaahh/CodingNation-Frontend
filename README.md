@@ -1,4 +1,6 @@
-# Coding Nation
+# Coding Nation 
+
+Live at - https://codingnationn.netlify.app/
 
 Coding Nation is a fully functional ed-tech platform built using the **MERN stack** (**MongoDB, Express.js, React.js, and Node.js**). It enables users to create, consume, and rate educational content while offering a seamless learning experience for students and a platform for instructors to share their expertise.  
 
